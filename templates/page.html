@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="$lang$">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$if(pagetitle)$$pagetitle$$else$$if(title)$$title$ · $endif$quantrammer$endif$</title>
+$if(description)$<meta name="description" content="$description$">$endif$
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+<header class="site">
+  <nav>
+    <a href="/" class="brand">quantrammer</a>
+    <a href="/purposenotes/">PurposeNotes</a>
+    <a href="/purposenotes/privacy/">Privacy</a>
+    <a href="/purposenotes/support/">Support</a>
+  </nav>
+</header>
+<main>
+$if(title)$<h1>$title$</h1>$endif$
+$body$
+</main>
+<footer class="site">
+  <p>© 2026 quantrammer · <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
+  <p>This site sets no cookies, runs no scripts, and loads nothing from third parties.</p>
+</footer>
+</body>
+</html>
