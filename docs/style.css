@@ -1,22 +1,399 @@
-:root{--bg:#fbfaf7;--fg:#1c1b19;--muted:#6b6862;--link:#1d5fb4;--rule:#e6e2da;--code:#f1eee8}
-@media (prefers-color-scheme:dark){:root{--bg:#161513;--fg:#ebe7df;--muted:#a19c93;--link:#7fb0f0;--rule:#2c2a26;--code:#22201d}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-header.site,main,footer.site{max-width:42rem;margin:0 auto;padding:0 1.25rem}
-header.site nav{display:flex;flex-wrap:wrap;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--rule);font-size:.95rem}
-header.site a{color:var(--muted);text-decoration:none}
-header.site a.brand{color:var(--fg);font-weight:600;margin-right:auto}
-header.site a:hover{color:var(--link)}
-main{padding:2rem 1.25rem 3rem}
-main h1{font-size:2rem;line-height:1.2;margin:0 0 .5rem;letter-spacing:-.01em}
-main h2{font-size:1.35rem;margin:2.2rem 0 .6rem}
-main h3{font-size:1.1rem;margin:1.6rem 0 .4rem}
-main p,main li{max-width:65ch}
-main a{color:var(--link)}
-main em{color:var(--muted)}
-main blockquote{margin:1rem 0;padding:.2rem 1rem;border-left:3px solid var(--rule);color:var(--muted)}
-main code{font:.92em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--code);padding:.1em .35em;border-radius:4px}
-main hr{border:0;border-top:1px solid var(--rule);margin:2rem 0}
-footer.site{padding:1.5rem 1.25rem 3rem;border-top:1px solid var(--rule);color:var(--muted);font-size:.9rem}
-footer.site a{color:var(--muted)}
+/* =============================================================
+   quantrammer.com — PurposeNotes Anchor design language
+
+   Tokens mirror the shipping app:
+     PurposeNotes/web/app-v3/public/design/tokens/meaning-first.css
+     PurposeNotes/design/PurposeNotes-DesignKit/colors_and_type.css
+
+   Anchor faces (Phase 1 shipping identity, self-hosted, OFL):
+     Geist            -> Anchor Text     (UI + body)
+     Instrument Serif -> Anchor Display  (headlines)
+     Newsreader       -> Anchor Quill    (italic pull quotes only)
+     JetBrains Mono   -> Anchor Mono     (eyebrows, meta, code)
+
+   No third-party requests: every face resolves from /fonts/.
+   ============================================================= */
+
+/* ── Anchor faces ─────────────────────────────────────────── */
+@font-face{font-family:'Geist';src:local('Geist'),url('/fonts/Geist-Variable.woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:local('Instrument Serif'),url('/fonts/InstrumentSerif-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Instrument Serif';src:local('Instrument Serif Italic'),url('/fonts/InstrumentSerif-Italic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'Newsreader';src:local('Newsreader Italic'),url('/fonts/Newsreader-Italic-Variable.woff2') format('woff2-variations');font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:local('JetBrains Mono'),url('/fonts/JetBrainsMono-Variable.woff2') format('woff2-variations');font-weight:100 800;font-style:normal;font-display:swap}
+
+/* ── Tokens — light is canonical ──────────────────────────── */
+:root{
+  color-scheme:light;
+
+  --anchor-display:'Instrument Serif',Georgia,'Iowan Old Style',serif;
+  --anchor-text:'Geist',-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',system-ui,sans-serif;
+  --anchor-quill:'Newsreader','Iowan Old Style',Georgia,'Times New Roman',serif;
+  --anchor-mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+
+  --surface:#FAF8F4;
+  --surface-panel:#F2EFE8;
+  --surface-card:#FFFFFF;
+  --surface-edge:#E8E4DA;
+  --hair:rgba(26,26,31,.06);
+  --border:rgba(26,26,31,.08);
+  --fill:rgba(94,107,216,.12);
+
+  --text:#1A1A1F;
+  /* Deliberate AA deviation: the app ships #6E6E78, which is 4.39:1 on
+     --surface-panel. This site renders legal prose at 11-14.5px on that
+     panel, so the token is darkened to clear WCAG 1.4.3 (5.2:1). */
+  --text-2:#63636D;
+  --text-3:#A6A6AE;
+
+  --p-career:#5E6BD8;
+  --p-graduate:#C77F2A;
+  --p-healthy:#4F9D6E;
+  --p-family:#C9588E;
+  --p-creative:#9759C2;
+
+  --state-overdue:#E08566;
+  --state-success:#4F9D6E;
+  --state-warning:#C77F2A;
+
+  --radius-sm:6px;
+  --radius-md:8px;
+  --radius-lg:10px;
+  --radius-xl:14px;
+  --radius-pill:999px;
+
+  --shadow-card:0 1px 2px rgba(20,20,30,.04);
+  --shadow-popover:0 12px 32px rgba(20,20,30,.10);
+
+  --tracking-tight:-.02em;
+  --tracking-caps:.08em;
+  --reading:680px;
+
+  --ease:cubic-bezier(.32,.72,0,1);
+  --dur:220ms;
+
+  /* --p-career is 4.33:1 on --surface. Links get a darker sibling; the
+     hue itself still drives dots, accent bars and the h1 accent word. */
+  --link:#5560CC;
+}
+
+/* Dark — hand-tuned, not an inversion. Purpose hues use -d variants. */
+@media (prefers-color-scheme:dark){
+  :root{
+    color-scheme:dark;
+    --surface:#15161A;
+    --surface-panel:#1A1B20;
+    --surface-card:#1A1B20;
+    --surface-edge:#0F1014;
+    --hair:rgba(255,255,255,.04);
+    --border:rgba(255,255,255,.08);
+    --fill:rgba(120,134,232,.12);
+
+    --text:#F2EFE8;
+    --text-2:#8A8D98;
+    --text-3:#6B6E78;
+
+    --p-career:#7886E8;
+    --p-graduate:#D89A4D;
+    --p-healthy:#5DAD7E;
+    --p-family:#D77AA0;
+    --p-creative:#A977D0;
+
+    /* Dark --p-career (#7886E8) clears AA on every dark surface. */
+    --link:var(--p-career);
+
+    --shadow-card:0 1px 2px rgba(0,0,0,.40);
+    --shadow-popover:0 12px 32px rgba(0,0,0,.45);
+  }
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+body{
+  margin:0;
+  background:var(--surface);
+  color:var(--text);
+  font-family:var(--anchor-text);
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+::selection{background:var(--fill);color:var(--text)}
+
+a{color:var(--link);overflow-wrap:anywhere;text-decoration:none;text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--p-career);outline-offset:3px;border-radius:var(--radius-sm)}
+
+img,svg{max-width:100%}
+
+.wrap{max-width:var(--reading);margin:0 auto;padding:0 24px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--surface-card);color:var(--text);
+  border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:10px 16px;font-size:14px;font-weight:500;
+}
+.skip:focus{left:16px;top:12px}
+
+/* ── Header ───────────────────────────────────────────────── */
+header.site{
+  position:sticky;top:0;z-index:10;
+  background:var(--surface-panel);
+  border-bottom:1px solid var(--border);
+}
+@supports (backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px)){
+  header.site{
+    background:color-mix(in srgb,var(--surface-panel) 86%,transparent);
+    -webkit-backdrop-filter:saturate(180%) blur(12px);
+    backdrop-filter:saturate(180%) blur(12px);
+  }
+}
+
+header.site .wrap{
+  display:flex;align-items:center;gap:8px;
+  min-height:56px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap;
+}
+
+.brand{
+  display:inline-flex;align-items:center;gap:9px;
+  margin-right:auto;
+  color:var(--text);font-weight:600;font-size:15px;
+  letter-spacing:var(--tracking-tight);
+}
+.brand:hover{text-decoration:none;color:var(--text)}
+.brand .mark{width:22px;height:22px;flex:none;display:block}
+/* Purpose nodes paint from tokens so they swap to the -d variants in dark. */
+.brand .mark .node-graduate{fill:var(--p-graduate)}
+.brand .mark .node-healthy{fill:var(--p-healthy)}
+
+header.site nav{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+header.site nav a{
+  color:var(--text-2);font-size:13.5px;font-weight:500;
+  padding:6px 10px;border-radius:var(--radius-sm);
+  transition:color var(--dur) var(--ease),background var(--dur) var(--ease);
+}
+header.site nav a:hover{color:var(--text);background:var(--hair);text-decoration:none}
+header.site nav a[aria-current="page"]{color:var(--text);font-weight:600;background:var(--fill)}
+
+/* ── Main / long-form typography ──────────────────────────── */
+main{display:block;padding:56px 0 72px}
+main .wrap>*:first-child{margin-top:0}
+
+/* Page title — Anchor Display. The italic accent word is the
+   PurposeNotes signature: exactly one per page, in --p-career. */
+main h1{
+  font-family:var(--anchor-display);
+  font-weight:400;
+  font-size:clamp(34px,6vw,50px);
+  line-height:1.12;
+  letter-spacing:var(--tracking-tight);
+  margin:0 0 20px;
+  text-wrap:balance;
+}
+main h1 em,main h1 .accent{font-style:italic;color:var(--p-career);font-weight:400}
+
+main h2{
+  font-family:var(--anchor-display);
+  font-weight:400;
+  font-size:clamp(24px,3.4vw,30px);
+  line-height:1.22;
+  letter-spacing:var(--tracking-tight);
+  margin:52px 0 14px;
+  padding-top:20px;
+  border-top:1px solid var(--hair);
+  text-wrap:balance;
+}
+main h2:first-of-type{border-top:0;padding-top:0}
+
+main h3{
+  font-family:var(--anchor-text);
+  font-weight:600;
+  font-size:17px;
+  line-height:1.35;
+  letter-spacing:var(--tracking-tight);
+  margin:32px 0 8px;
+}
+main h4{font-family:var(--anchor-text);font-weight:600;font-size:15px;margin:24px 0 6px;color:var(--text-2)}
+
+main p,main li{max-width:68ch;overflow-wrap:anywhere}
+main p{margin:0 0 16px}
+
+main ul,main ol{margin:0 0 18px;padding-left:1.15em}
+main li{margin:0 0 8px}
+main li::marker{color:var(--text-3)}
+main ul ul,main ol ol,main ul ol,main ol ul{margin:8px 0 0}
+
+main strong{font-weight:600;color:var(--text)}
+
+/* Lede — the first paragraph after the page title */
+main h1+p{
+  font-size:19px;line-height:1.6;color:var(--text-2);
+  max-width:60ch;margin-bottom:28px;
+}
+/* "Last updated" stamp on the legal pages */
+main h1+p>em:only-child{
+  display:inline-block;font-family:var(--anchor-mono);font-style:normal;
+  font-size:11px;font-weight:500;letter-spacing:var(--tracking-caps);
+  text-transform:uppercase;color:var(--text-2);
+  background:var(--surface-panel);border:1px solid var(--border);
+  border-radius:var(--radius-pill);padding:5px 12px;
+}
+
+main blockquote{
+  margin:24px 0;padding:2px 0 2px 22px;
+  border-left:2px solid var(--p-career);
+  font-family:var(--anchor-quill);font-style:italic;
+  font-size:19px;line-height:1.55;color:var(--text-2);
+}
+main blockquote p{margin:0 0 10px;max-width:62ch}
+main blockquote p:last-child{margin:0}
+
+main code{
+  font-family:var(--anchor-mono);font-size:.87em;
+  background:var(--surface-panel);border:1px solid var(--border);
+  padding:.1em .38em;border-radius:var(--radius-sm);
+}
+main pre{
+  background:var(--surface-panel);border:1px solid var(--border);
+  border-radius:var(--radius-md);padding:14px 16px;overflow-x:auto;
+}
+main pre code{background:none;border:0;padding:0;font-size:13px}
+
+main hr{border:0;border-top:1px solid var(--hair);margin:44px 0}
+
+main table{
+  width:100%;border-collapse:collapse;margin:20px 0;
+  font-size:14.5px;display:block;overflow-x:auto;
+}
+main th,main td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--hair)}
+main th{
+  font-family:var(--anchor-mono);font-size:11px;font-weight:500;
+  letter-spacing:var(--tracking-caps);text-transform:uppercase;
+  color:var(--text-2);border-bottom:1px solid var(--border);
+  white-space:nowrap;
+}
+
+/* ── Components ───────────────────────────────────────────── */
+
+/* Eyebrow — Anchor Mono, never above 12px */
+.eyebrow{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--anchor-mono);font-size:11px;font-weight:500;
+  letter-spacing:var(--tracking-caps);text-transform:uppercase;
+  color:var(--text-2);margin:0 0 16px;max-width:none;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--hair)}
+
+/* Purpose dot — the app's smallest Purpose indicator */
+.dot{
+  width:8px;height:8px;border-radius:var(--radius-pill);
+  flex:none;display:inline-block;background:var(--p-career);
+}
+
+/* Feature cards — one Purpose hue each, mirroring the app's
+   Purpose-coloured rows. */
+.cards{
+  display:grid;gap:14px;margin:28px 0 8px;
+  grid-template-columns:repeat(auto-fit,minmax(248px,1fr));
+}
+.card{
+  position:relative;overflow:hidden;
+  background:var(--surface-card);
+  border:1px solid var(--border);
+  border-radius:var(--radius-xl);
+  padding:20px 20px 18px;
+  box-shadow:var(--shadow-card);
+  transition:box-shadow var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+.card::before{
+  content:"";position:absolute;inset:0 auto 0 0;width:3px;
+  background:var(--hue,var(--p-career));
+}
+.card:hover{box-shadow:var(--shadow-popover);transform:translateY(-1px)}
+.card h3{
+  display:flex;align-items:center;gap:9px;
+  margin:0 0 7px;font-size:15px;font-weight:600;letter-spacing:var(--tracking-tight);
+}
+.card h3 .dot{background:var(--hue,var(--p-career))}
+.card p{margin:0;font-size:14.5px;line-height:1.6;color:var(--text-2);max-width:none}
+.card p a{font-weight:500}
+
+.card.career{--hue:var(--p-career)}
+.card.graduate{--hue:var(--p-graduate)}
+.card.healthy{--hue:var(--p-healthy)}
+.card.family{--hue:var(--p-family)}
+.card.creative{--hue:var(--p-creative)}
+
+/* Call-to-action row */
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 8px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:500;
+  padding:9px 16px;border-radius:var(--radius-sm);
+  border:1px solid var(--border);
+  background:var(--surface-card);color:var(--text);
+  box-shadow:var(--shadow-card);
+  transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+.btn:hover{text-decoration:none;transform:translateY(-1px);border-color:var(--p-career)}
+.btn.primary{background:var(--link);border-color:var(--link);color:#FAF8F4}
+.btn.primary:hover{filter:brightness(1.07)}
+@media (prefers-color-scheme:dark){.btn.primary{color:#15161A}}
+
+/* Inline meta chip — mono, used for addresses and small facts */
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:var(--anchor-mono);font-size:12px;font-weight:500;
+  padding:5px 11px;border-radius:var(--radius-pill);
+  background:var(--surface-panel);border:1px solid var(--border);
+  color:var(--text-2);overflow-wrap:anywhere;
+}
+.chip a{color:var(--text);font-weight:500}
+
+/* Quiet note panel */
+.note{
+  background:var(--surface-panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:16px 18px;margin:24px 0;
+  font-size:14.5px;line-height:1.6;color:var(--text-2);
+}
+.note p{margin:0;max-width:none}
+.note strong{color:var(--text)}
+
+/* ── Footer ───────────────────────────────────────────────── */
+footer.site{
+  border-top:1px solid var(--border);
+  background:var(--surface-panel);
+  padding:36px 0 48px;
+  color:var(--text-2);font-size:13.5px;
+}
+footer.site .wrap{display:flex;flex-direction:column;gap:14px}
+footer.site .fnav{display:flex;flex-wrap:wrap;gap:6px;margin-left:-10px}
+footer.site .fnav a{
+  color:var(--text-2);padding:4px 10px;border-radius:var(--radius-sm);
+  transition:color var(--dur) var(--ease),background var(--dur) var(--ease);
+}
+footer.site .fnav a:hover{color:var(--text);background:var(--hair);text-decoration:none}
+footer.site .fmeta{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+footer.site .fine{margin:0;color:var(--text-2);font-size:12.5px;max-width:68ch;line-height:1.55}
+footer.site a{color:var(--text-2)}
+
+/* ── Small screens ────────────────────────────────────────── */
+@media (max-width:560px){
+  main{padding:36px 0 52px}
+  .wrap{padding:0 18px}
+  header.site .wrap{min-height:52px}
+  header.site nav{gap:0;margin-left:-8px}
+  header.site nav a{padding:6px 8px;font-size:13px}
+  main h2{margin-top:40px}
+  main h1+p{font-size:17.5px}
+}

@@ -4,29 +4,52 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PurposeNotes Privacy Policy</title>
-
+<meta name="description" content="How PurposeNotes handles your data: no
+accounts, no servers of ours, no analytics.">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15161A" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" href="data:,">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/Geist-Variable.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/InstrumentSerif-Regular.woff2" crossorigin>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo.svg">
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="site">
-  <nav>
-    <a href="/" class="brand">quantrammer</a>
-    <a href="/purposenotes/">PurposeNotes</a>
-    <a href="/purposenotes/privacy/">Privacy</a>
-    <a href="/purposenotes/support/">Support</a>
-  </nav>
+  <div class="wrap">
+    <a href="/" class="brand">
+      <svg class="mark" viewBox="0 0 140 140" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="70" cy="70" r="60" fill="none" stroke="currentColor" stroke-width="6" opacity=".85"></circle>
+        <line x1="44" y1="50" x2="60" y2="60" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="78" y2="92" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="90" y2="58" stroke="currentColor" stroke-width="3" opacity=".45" stroke-dasharray="4 4"></line>
+        <circle cx="44" cy="50" r="7" fill="currentColor"></circle>
+        <circle cx="60" cy="60" r="8" fill="currentColor"></circle>
+        <circle class="node-graduate" cx="90" cy="58" r="7"></circle>
+        <circle class="node-healthy" cx="78" cy="92" r="7"></circle>
+      </svg>
+      quantrammer
+    </a>
+    <nav aria-label="Primary">
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/" aria-current="page">Privacy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+  </div>
 </header>
-<main>
-<h1>PurposeNotes Privacy Policy</h1>
+<main id="content">
+<div class="wrap">
+<p class="eyebrow">PurposeNotes · Legal</p>
+<h1 id="purposenotes-privacy-policy">PurposeNotes Privacy Policy</h1>
 <p><em>Last updated: 2026-08-26</em></p>
-<h1 id="the-short-version">The short version</h1>
+<h2 id="the-short-version">The short version</h2>
 <p>PurposeNotes is a local-first notes app. Your notes live on your
 device. We run no servers, require no account, and collect no analytics.
 Nothing you write is sent to us — we could not read your notes even if
 we wanted to, because we never receive them.</p>
-<h1 id="what-we-collect">What we collect</h1>
+<h2 id="what-we-collect">What we collect</h2>
 <p><strong>Nothing.</strong> PurposeNotes has:</p>
 <ul>
 <li><strong>No accounts.</strong> There is no sign-up, no email, no
@@ -39,15 +62,15 @@ trackers.</li>
 <li><strong>No data sale or sharing.</strong> We hold no user data, so
 there is nothing to sell or share.</li>
 </ul>
-<h1 id="where-your-data-lives">Where your data lives</h1>
+<h2 id="where-your-data-lives">Where your data lives</h2>
 <p>Your notes, tasks, goals, purposes, and attachments are stored in a
 database on your device. They stay there unless you turn on one of the
 optional features below or export them yourself.</p>
-<h1 id="optional-features-that-use-the-network">Optional features that
-use the network</h1>
+<h2 id="optional-features-that-use-the-network">Optional features that
+use the network</h2>
 <p>Each of these is off until you use it, and each is described so you
 can decide:</p>
-<h2 id="icloud-sync-optional">iCloud sync (optional)</h2>
+<h3 id="icloud-sync-optional">iCloud sync (optional)</h3>
 <p>If you enable sync, PurposeNotes syncs through <strong>your</strong>
 iCloud account using Apple's CloudKit <strong>private database</strong>.
 Sync payloads are <strong>end-to-end encrypted on your device before
@@ -58,23 +81,23 @@ Keychain; there is no server-side escrow, and we cannot recover your
 data if you lose both. Apple's handling of iCloud data is governed by <a
 href="https://www.apple.com/legal/privacy/">Apple's privacy
 policy</a>.</p>
-<h2 id="on-device-ai-model-downloads-optional-user-initiated">On-device
-AI model downloads (optional, user-initiated)</h2>
+<h3 id="on-device-ai-model-downloads-optional-user-initiated">On-device
+AI model downloads (optional, user-initiated)</h3>
 <p>AI features run <strong>on your device</strong>. If you choose to
 enable them, the app downloads model files you explicitly request from
 Hugging Face (huggingface.co). That download sends an ordinary web
 request (your IP address, the requested file) to Hugging Face, governed
 by their privacy policy. No note content is included in the request.</p>
-<h2 id="cloud-ai-routing-optional-off-by-default">Cloud AI routing
-(optional, off by default)</h2>
+<h3 id="cloud-ai-routing-optional-off-by-default">Cloud AI routing
+(optional, off by default)</h3>
 <p>Cloud AI is <strong>opt-in, off by default</strong>, and asks for
 <strong>per-action confirmation</strong> before any request. Only the
 content you confirm for that specific action is sent, using an API key
 you supply. Every AI and MCP access is recorded in the on-device
 <strong>AI Access Log</strong> so you can audit exactly what left the
 device and when.</p>
-<h2 id="other-narrow-user-controlled-cases">Other narrow,
-user-controlled cases</h2>
+<h3 id="other-narrow-user-controlled-cases">Other narrow,
+user-controlled cases</h3>
 <ul>
 <li><strong>Map tiles:</strong> if you open the Map view, Apple MapKit
 fetches map tiles anonymously. Reading photo locations (EXIF) for the
@@ -85,26 +108,38 @@ content, titles, or graph statistics.</li>
 <li><strong>Spotlight:</strong> indexing note <strong>titles</strong>
 for system search is off by default.</li>
 </ul>
-<h1 id="data-deletion">Data deletion</h1>
+<h2 id="data-deletion">Data deletion</h2>
 <p>Deleting data in the app deletes it from your device. If sync is
 enabled, deletions propagate to your iCloud private database. Deleting
 the app removes its local data per standard iOS/macOS behavior; you can
 also remove the app's iCloud data via your device's iCloud storage
 management.</p>
-<h1 id="children">Children</h1>
+<h2 id="children">Children</h2>
 <p>PurposeNotes collects no data from anyone, including children.</p>
-<h1 id="changes">Changes</h1>
+<h2 id="changes">Changes</h2>
 <p>If this policy changes, the updated version will be posted at <a
 href="https://quantrammer.com/purposenotes/privacy">https://quantrammer.com/purposenotes/privacy</a>
 with a new "Last updated" date. Because we collect nothing, changes
 would typically only describe new optional features.</p>
-<h1 id="contact">Contact</h1>
+<h2 id="contact">Contact</h2>
 <p>Questions about privacy: <strong><a
 href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></strong></p>
+</div>
 </main>
 <footer class="site">
-  <p>© 2026 quantrammer · <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
-  <p>This site sets no cookies, runs no scripts, and loads nothing from third parties.</p>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy Policy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+    <div class="fmeta">
+      <span class="chip">Support <a href="mailto:support@quantrammer.com">support@quantrammer.com</a></span>
+      <span class="chip">Privacy <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></span>
+    </div>
+    <p class="fine">© 2026 quantrammer. This site sets no cookies, runs no scripts, and loads nothing from third parties — typefaces are self-hosted (Geist, Instrument Serif, Newsreader, JetBrains Mono, all under the SIL Open Font License).</p>
+  </div>
 </footer>
 </body>
 </html>

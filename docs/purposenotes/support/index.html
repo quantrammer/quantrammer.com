@@ -4,23 +4,46 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PurposeNotes Support</title>
-
+<meta name="description" content="Help, FAQ, troubleshooting, and data
+export for PurposeNotes.">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15161A" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" href="data:,">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/Geist-Variable.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/InstrumentSerif-Regular.woff2" crossorigin>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo.svg">
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="site">
-  <nav>
-    <a href="/" class="brand">quantrammer</a>
-    <a href="/purposenotes/">PurposeNotes</a>
-    <a href="/purposenotes/privacy/">Privacy</a>
-    <a href="/purposenotes/support/">Support</a>
-  </nav>
+  <div class="wrap">
+    <a href="/" class="brand">
+      <svg class="mark" viewBox="0 0 140 140" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="70" cy="70" r="60" fill="none" stroke="currentColor" stroke-width="6" opacity=".85"></circle>
+        <line x1="44" y1="50" x2="60" y2="60" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="78" y2="92" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="90" y2="58" stroke="currentColor" stroke-width="3" opacity=".45" stroke-dasharray="4 4"></line>
+        <circle cx="44" cy="50" r="7" fill="currentColor"></circle>
+        <circle cx="60" cy="60" r="8" fill="currentColor"></circle>
+        <circle class="node-graduate" cx="90" cy="58" r="7"></circle>
+        <circle class="node-healthy" cx="78" cy="92" r="7"></circle>
+      </svg>
+      quantrammer
+    </a>
+    <nav aria-label="Primary">
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy</a>
+      <a href="/purposenotes/support/" aria-current="page">Support</a>
+    </nav>
+  </div>
 </header>
-<main>
-<h1>PurposeNotes Support</h1>
-<h1 id="get-help">Get help</h1>
+<main id="content">
+<div class="wrap">
+<p class="eyebrow">PurposeNotes · Help</p>
+<h1 id="purposenotes-support">PurposeNotes Support</h1>
+<h2 id="get-help">Get help</h2>
 <p>Email us: <strong><a
 href="mailto:support@quantrammer.com">support@quantrammer.com</a></strong></p>
 <p>When reporting a problem, it helps to include:</p>
@@ -31,48 +54,60 @@ href="mailto:support@quantrammer.com">support@quantrammer.com</a></strong></p>
 </ul>
 <p>We never need — and cannot use — your passphrase. Do not include it
 in any message.</p>
-<h1 id="frequently-asked-questions">Frequently asked questions</h1>
-<h2 id="where-is-my-data-stored">Where is my data stored?</h2>
+<h2 id="frequently-asked-questions">Frequently asked questions</h2>
+<h3 id="where-is-my-data-stored">Where is my data stored?</h3>
 <p>On your device. PurposeNotes has no accounts and no servers of its
 own. If you enable sync, encrypted copies also live in your personal
 iCloud private database. See the <a
 href="https://quantrammer.com/purposenotes/privacy">privacy
 policy</a>.</p>
-<h2 id="i-forgot-my-passphrase-can-you-reset-it">I forgot my passphrase.
-Can you reset it?</h2>
+<h3 id="i-forgot-my-passphrase-can-you-reset-it">I forgot my passphrase.
+Can you reset it?</h3>
 <p>If any of your devices is signed in to your Apple ID and unlocked,
 open PurposeNotes there and set a new passphrase in Settings — recovery
 works through your Apple ID and iCloud Keychain. We hold no copy of your
 keys, so if you lose the passphrase <strong>and</strong> access to every
 signed-in device / your Apple ID, the vault cannot be recovered — by
 design.</p>
-<h2 id="how-do-i-sync-across-devices">How do I sync across devices?</h2>
+<h3 id="how-do-i-sync-across-devices">How do I sync across devices?</h3>
 <p>Sign in to the same iCloud account on each device and enable sync in
 Settings. Sync payloads are end-to-end encrypted before they leave the
 device.</p>
-<h2 id="how-do-i-import-from-apple-notes-or-obsidian">How do I import
-from Apple Notes or Obsidian?</h2>
+<h3 id="how-do-i-import-from-apple-notes-or-obsidian">How do I import
+from Apple Notes or Obsidian?</h3>
 <p>Use the importer in the app. Notes, folder structure, ordering,
 formatting, and media are brought in from the source app.</p>
-<h2 id="how-do-i-export-or-back-up-my-notes">How do I export or back up
-my notes?</h2>
+<h3 id="how-do-i-export-or-back-up-my-notes">How do I export or back up
+my notes?</h3>
 <p>Settings → Export &amp; backup → "Export everything as Markdown"
 writes a plaintext Markdown archive of your vault. Keep exports
 somewhere safe — they are not encrypted.</p>
-<h2 id="a-supertag--popover--graph-isnt-behaving-what-should-i-try">A
-supertag / popover / graph isn't behaving. What should I try?</h2>
+<h3 id="a-supertag--popover--graph-isnt-behaving-what-should-i-try">A
+supertag / popover / graph isn't behaving. What should I try?</h3>
 <ol type="1">
 <li>Update to the latest version of the app.</li>
 <li>Relaunch the app.</li>
 <li>Still stuck? Email us the steps to reproduce (see above).</li>
 </ol>
-<h2 id="how-do-i-request-a-feature">How do I request a feature?</h2>
+<h3 id="how-do-i-request-a-feature">How do I request a feature?</h3>
 <p>Email us. Feature requests are read; requests that fit the product's
 meaning-first principles are prioritized.</p>
+</div>
 </main>
 <footer class="site">
-  <p>© 2026 quantrammer · <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
-  <p>This site sets no cookies, runs no scripts, and loads nothing from third parties.</p>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy Policy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+    <div class="fmeta">
+      <span class="chip">Support <a href="mailto:support@quantrammer.com">support@quantrammer.com</a></span>
+      <span class="chip">Privacy <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></span>
+    </div>
+    <p class="fine">© 2026 quantrammer. This site sets no cookies, runs no scripts, and loads nothing from third parties — typefaces are self-hosted (Geist, Instrument Serif, Newsreader, JetBrains Mono, all under the SIL Open Font License).</p>
+  </div>
 </footer>
 </body>
 </html>

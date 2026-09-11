@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" fill="none" role="img" aria-label="quantrammer">
+  <style>
+    .bg{fill:#FAF8F4}.ring,.node,.edge{stroke:#5E6BD8}.node1{fill:#5E6BD8}
+    @media (prefers-color-scheme:dark){
+      .bg{fill:#15161A}.ring,.node,.edge{stroke:#7886E8}.node1{fill:#7886E8}
+      .node2{fill:#D89A4D}.node3{fill:#5DAD7E}
+    }
+  </style>
+  <circle class="bg ring" cx="70" cy="70" r="60" stroke-width="6"/>
+  <line class="edge" x1="44" y1="50" x2="60" y2="60" stroke-width="2" opacity=".5"/>
+  <line class="edge" x1="60" y1="60" x2="78" y2="92" stroke-width="2" opacity=".5"/>
+  <line class="edge" x1="60" y1="60" x2="90" y2="58" stroke-width="2" opacity=".5" stroke-dasharray="3 3"/>
+  <circle class="node1" cx="44" cy="50" r="6"/>
+  <circle class="node1" cx="60" cy="60" r="7"/>
+  <circle class="node2" cx="90" cy="58" r="6" fill="#C77F2A"/>
+  <circle class="node3" cx="78" cy="92" r="6" fill="#4F9D6E"/>
+</svg>

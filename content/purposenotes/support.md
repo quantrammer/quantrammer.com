@@ -1,3 +1,9 @@
+---
+description: "Help, FAQ, troubleshooting, and data export for PurposeNotes."
+eyebrow: "PurposeNotes · Help"
+nav-support: true
+---
+
 # PurposeNotes Support
 
 ## Get help

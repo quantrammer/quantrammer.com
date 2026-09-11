@@ -7,41 +7,86 @@
 <meta name="description" content="quantrammer builds local-first,
 privacy-respecting apps for Apple platforms.">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15161A" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" href="data:,">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/Geist-Variable.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/InstrumentSerif-Regular.woff2" crossorigin>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo.svg">
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="site">
-  <nav>
-    <a href="/" class="brand">quantrammer</a>
-    <a href="/purposenotes/">PurposeNotes</a>
-    <a href="/purposenotes/privacy/">Privacy</a>
-    <a href="/purposenotes/support/">Support</a>
-  </nav>
+  <div class="wrap">
+    <a href="/" class="brand">
+      <svg class="mark" viewBox="0 0 140 140" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="70" cy="70" r="60" fill="none" stroke="currentColor" stroke-width="6" opacity=".85"></circle>
+        <line x1="44" y1="50" x2="60" y2="60" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="78" y2="92" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="90" y2="58" stroke="currentColor" stroke-width="3" opacity=".45" stroke-dasharray="4 4"></line>
+        <circle cx="44" cy="50" r="7" fill="currentColor"></circle>
+        <circle cx="60" cy="60" r="8" fill="currentColor"></circle>
+        <circle class="node-graduate" cx="90" cy="58" r="7"></circle>
+        <circle class="node-healthy" cx="78" cy="92" r="7"></circle>
+      </svg>
+      quantrammer
+    </a>
+    <nav aria-label="Primary">
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+  </div>
 </header>
-<main>
-<h1>quantrammer</h1>
-<p>Independent software for Apple platforms. Local-first by default:
-your data stays on your device unless you choose otherwise.</p>
-<h1 id="apps">Apps</h1>
-<h2 id="purposenotes">PurposeNotes</h2>
-<p>A meaning-first notes app for iPhone, iPad, and Mac. Notes, tasks,
-goals, and purposes live in one graph, stored on your device, with
-optional end-to-end encrypted iCloud sync and on-device AI.</p>
-<ul>
-<li><a href="/purposenotes/">About PurposeNotes</a></li>
-<li><a href="/purposenotes/privacy/">Privacy Policy</a></li>
-<li><a href="/purposenotes/support/">Support</a></li>
-</ul>
-<h1 id="contact">Contact</h1>
-<p>General: <strong><a
-href="mailto:support@quantrammer.com">support@quantrammer.com</a></strong>
-· Privacy: <strong><a
-href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></strong></p>
+<main id="content">
+<div class="wrap">
+<p class="eyebrow">Independent software · Apple platforms</p>
+<h1 id="software-that-stays-on-your-device">Software that stays on your
+<em>device</em></h1>
+<p>quantrammer builds local-first apps for Apple platforms. Local-first
+by default: your data stays on your device unless you choose
+otherwise.</p>
+<h2 id="apps">Apps</h2>
+<div class="cards">
+<div class="card career">
+<h3><span class="dot"></span> PurposeNotes</h3>
+<p>A meaning-first notes app for iPhone, iPad, and Mac. Notes, tasks, goals, and purposes live in one graph, stored on your device, with optional end-to-end encrypted iCloud sync and on-device AI.<br><a href="/purposenotes/">About PurposeNotes →</a></p>
+</div>
+</div>
+
+<h2 id="purposenotes-documents">PurposeNotes documents</h2>
+<div class="cards">
+<div class="card healthy">
+<h3><span class="dot"></span> Privacy Policy</h3>
+<p>No accounts, no servers of ours, no analytics. What that means in detail.<br><a href="/purposenotes/privacy/">Read the policy →</a></p>
+</div>
+<div class="card graduate">
+<h3><span class="dot"></span> Support</h3>
+<p>Help, troubleshooting, data export, and how to reach a human.<br><a href="/purposenotes/support/">Open support →</a></p>
+</div>
+</div>
+
+<h2 id="contact">Contact</h2>
+<div class="note">
+<p>General: <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · Privacy: <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
+</div>
+</div>
 </main>
 <footer class="site">
-  <p>© 2026 quantrammer · <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
-  <p>This site sets no cookies, runs no scripts, and loads nothing from third parties.</p>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy Policy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+    <div class="fmeta">
+      <span class="chip">Support <a href="mailto:support@quantrammer.com">support@quantrammer.com</a></span>
+      <span class="chip">Privacy <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></span>
+    </div>
+    <p class="fine">© 2026 quantrammer. This site sets no cookies, runs no scripts, and loads nothing from third parties — typefaces are self-hosted (Geist, Instrument Serif, Newsreader, JetBrains Mono, all under the SIL Open Font License).</p>
+  </div>
 </footer>
 </body>
 </html>

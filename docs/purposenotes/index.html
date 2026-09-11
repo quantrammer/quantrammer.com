@@ -3,55 +3,145 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PurposeNotes</title>
+<title>Notes that know what they are for</title>
 <meta name="description" content="PurposeNotes is a local-first notes
 app for iPhone, iPad, and Mac with end-to-end encrypted iCloud sync and
 on-device AI.">
 <meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15161A" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/style.css">
-<link rel="icon" href="data:,">
+<link rel="preload" as="font" type="font/woff2" href="/fonts/Geist-Variable.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/InstrumentSerif-Regular.woff2" crossorigin>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/logo.svg">
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="site">
-  <nav>
-    <a href="/" class="brand">quantrammer</a>
-    <a href="/purposenotes/">PurposeNotes</a>
-    <a href="/purposenotes/privacy/">Privacy</a>
-    <a href="/purposenotes/support/">Support</a>
-  </nav>
+  <div class="wrap">
+    <a href="/" class="brand">
+      <svg class="mark" viewBox="0 0 140 140" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="70" cy="70" r="60" fill="none" stroke="currentColor" stroke-width="6" opacity=".85"></circle>
+        <line x1="44" y1="50" x2="60" y2="60" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="78" y2="92" stroke="currentColor" stroke-width="3" opacity=".45"></line>
+        <line x1="60" y1="60" x2="90" y2="58" stroke="currentColor" stroke-width="3" opacity=".45" stroke-dasharray="4 4"></line>
+        <circle cx="44" cy="50" r="7" fill="currentColor"></circle>
+        <circle cx="60" cy="60" r="8" fill="currentColor"></circle>
+        <circle class="node-graduate" cx="90" cy="58" r="7"></circle>
+        <circle class="node-healthy" cx="78" cy="92" r="7"></circle>
+      </svg>
+      quantrammer
+    </a>
+    <nav aria-label="Primary">
+      <a href="/purposenotes/" aria-current="page">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+  </div>
 </header>
-<main>
-<h1>PurposeNotes</h1>
+<main id="content">
+<div class="wrap">
+<p class="eyebrow">For iPhone · iPad · Mac</p>
+<h1 id="notes-that-know-what-they-are-for">Notes that know what they are
+<em>for</em></h1>
 <p>PurposeNotes is a local-first notes app for iPhone, iPad, and Mac.
-Your notes, tasks, goals, and purposes are stored in a database on your
-device. There are no accounts and no PurposeNotes servers.</p>
-<h1 id="what-it-does">What it does</h1>
-<ul>
-<li><strong>Meaning-first structure.</strong> Connect notes to the
-purposes and goals they serve with supertags and a graph view.</li>
-<li><strong>Private by design.</strong> No analytics, no tracking, no
-data collection. See the <a href="/purposenotes/privacy/">privacy
-policy</a>.</li>
-<li><strong>Optional iCloud sync.</strong> Sync across your devices
-through your own iCloud account. Payloads are end-to-end encrypted on
-your device before upload.</li>
-<li><strong>On-device AI.</strong> AI features run on your device. Cloud
-AI is off by default and asks for confirmation per action; every access
-is recorded in the on-device AI Access Log.</li>
-<li><strong>Import and export.</strong> Import from Apple Notes or
-Obsidian. Export everything as plain Markdown at any time.</li>
-</ul>
-<h1 id="links">Links</h1>
-<ul>
-<li><a href="/purposenotes/privacy/">Privacy Policy</a></li>
-<li><a href="/purposenotes/support/">Support and FAQ</a></li>
-<li>Email: <strong><a
-href="mailto:support@quantrammer.com">support@quantrammer.com</a></strong></li>
-</ul>
+Your notes, tasks, goals, and purposes live in one graph on your device.
+There are no accounts and no PurposeNotes servers.</p>
+<div class="actions">
+<a class="btn primary" href="/purposenotes/support/">Get support</a>
+<a class="btn" href="/purposenotes/privacy/">Read the privacy policy</a>
+</div>
+
+<h2 id="what-it-does">What it does</h2>
+<div class="cards">
+<div class="card career">
+<h3><span class="dot"></span> Meaning-first structure</h3>
+<p>Connect every note to the purposes and goals it serves. Supertags and a graph view make the link between today's task and the thing you actually care about visible.</p>
+</div>
+<div class="card healthy">
+<h3><span class="dot"></span> Private by design</h3>
+<p>No analytics, no tracking, no data collection, no advertising identifiers. Nothing you write is sent to us. See the <a href="/purposenotes/privacy/">privacy policy</a>.</p>
+</div>
+<div class="card graduate">
+<h3><span class="dot"></span> Optional iCloud sync</h3>
+<p>Sync across your devices through your own iCloud account. Payloads are end-to-end encrypted on your device before upload, so the contents never leave in readable form.</p>
+</div>
+<div class="card creative">
+<h3><span class="dot"></span> On-device AI</h3>
+<p>AI features run on your device. Cloud AI is off by default and asks for confirmation per action; every access is recorded in the on-device AI Access Log.</p>
+</div>
+<div class="card family">
+<h3><span class="dot"></span> Import and export</h3>
+<p>Import from Apple Notes or Obsidian. Export everything as plain Markdown at any time — your notes are never locked inside the app.</p>
+</div>
+</div>
+
+<h2 id="the-five-purposes">The five purposes</h2>
+<p>PurposeNotes organises work around purposes rather than folders. Each
+carries its own hue throughout the app, so you can see at a glance which
+part of your life a note, goal, or task belongs to.</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Hue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Career mastery</td>
+<td>Blue-violet</td>
+</tr>
+<tr>
+<td>Graduate with honors</td>
+<td>Amber</td>
+</tr>
+<tr>
+<td>Healthy body</td>
+<td>Green</td>
+</tr>
+<tr>
+<td>Family time</td>
+<td>Rose</td>
+</tr>
+<tr>
+<td>Creative practice</td>
+<td>Violet</td>
+</tr>
+</tbody>
+</table>
+<h2 id="legal-and-support">Legal and support</h2>
+<div class="cards">
+<div class="card healthy">
+<h3><span class="dot"></span> Privacy Policy</h3>
+<p>What the app collects — which is nothing — and how sync and AI handle your data.<br><a href="/purposenotes/privacy/">Read the policy →</a></p>
+</div>
+<div class="card career">
+<h3><span class="dot"></span> Support and FAQ</h3>
+<p>Getting started, troubleshooting, data export, and how to reach a human.<br><a href="/purposenotes/support/">Open support →</a></p>
+</div>
+</div>
+
+<div class="note">
+<p><strong>Contact.</strong> Support: <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · Privacy: <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
+</div>
+</div>
 </main>
 <footer class="site">
-  <p>© 2026 quantrammer · <a href="mailto:support@quantrammer.com">support@quantrammer.com</a> · <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></p>
-  <p>This site sets no cookies, runs no scripts, and loads nothing from third parties.</p>
+  <div class="wrap">
+    <nav class="fnav" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/purposenotes/">PurposeNotes</a>
+      <a href="/purposenotes/privacy/">Privacy Policy</a>
+      <a href="/purposenotes/support/">Support</a>
+    </nav>
+    <div class="fmeta">
+      <span class="chip">Support <a href="mailto:support@quantrammer.com">support@quantrammer.com</a></span>
+      <span class="chip">Privacy <a href="mailto:privacy@quantrammer.com">privacy@quantrammer.com</a></span>
+    </div>
+    <p class="fine">© 2026 quantrammer. This site sets no cookies, runs no scripts, and loads nothing from third parties — typefaces are self-hosted (Geist, Instrument Serif, Newsreader, JetBrains Mono, all under the SIL Open Font License).</p>
+  </div>
 </footer>
 </body>
 </html>

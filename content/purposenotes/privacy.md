@@ -1,3 +1,9 @@
+---
+description: "How PurposeNotes handles your data: no accounts, no servers of ours, no analytics."
+eyebrow: "PurposeNotes · Legal"
+nav-privacy: true
+---
+
 # PurposeNotes Privacy Policy
 
 _Last updated: 2026-08-26_

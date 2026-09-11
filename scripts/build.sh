@@ -13,10 +13,16 @@ find "$HERE/content" -name '*.md' | while read -r md; do
   if [ "$(basename "$rel")" = "index" ]; then dir="$OUT/$(dirname "$rel")"; else dir="$OUT/$rel"; fi
   [ "$dir" = "$OUT/." ] && dir="$OUT"
   mkdir -p "$dir"
+  # Title comes from the first `# ` heading, passed as metadata so the
+  # <title> tag is right WITHOUT --shift-heading-level-by=-1 (which would
+  # promote every `##` section to a second <h1>). The body keeps its own
+  # single h1; `##` stay h2.
+  # Strip inline HTML (the display <em> accent) so <title> stays plain text.
+  title="$(sed -n 's/^# //p' "$md" | head -1 | sed 's/<[^>]*>//g')"
   pandoc "$md" --standalone --from gfm --to html5 \
-    --shift-heading-level-by=-1 \
     --template "$HERE/templates/page.html" \
     --metadata lang=en \
+    --metadata title="$title" \
     --output "$dir/index.html"
   echo "built ${dir#$OUT}/index.html"
 done
