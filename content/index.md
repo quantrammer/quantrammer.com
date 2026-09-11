@@ -12,7 +12,7 @@ quantrammer builds local-first apps for Apple platforms. Local-first by default:
 <div class="cards">
 <div class="card career">
 <h3><span class="dot"></span> PurposeNotes</h3>
-<p>A meaning-first notes app for iPhone, iPad, and Mac. Notes, tasks, goals, and purposes live in one graph, stored on your device, with optional end-to-end encrypted iCloud sync and on-device AI.<br><a href="/purposenotes/">About PurposeNotes →</a></p>
+<p>Notes that remember why. A Markdown notes app where tasks, goals and purposes live inside the note you're writing — and the knowledge graph builds itself. For iPhone, iPad, and Mac.<br><a href="/purposenotes/">About PurposeNotes →</a></p>
 </div>
 </div>
 
