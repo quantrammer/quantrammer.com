@@ -37,18 +37,6 @@ PurposeNotes is a local-first notes app for iPhone, iPad, and Mac. Your notes, t
 </div>
 </div>
 
-## The five purposes
-
-PurposeNotes organises work around purposes rather than folders. Each carries its own hue throughout the app, so you can see at a glance which part of your life a note, goal, or task belongs to.
-
-| Purpose | Hue |
-|---|---|
-| Career mastery | Blue-violet |
-| Graduate with honors | Amber |
-| Healthy body | Green |
-| Family time | Rose |
-| Creative practice | Violet |
-
 ## Legal and support
 
 <div class="cards">
